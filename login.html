@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login - CloudVault</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f7fc;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            width:400px;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2{
+            text-align:center;
+            color:#1e3a8a;
+            margin-bottom:20px;
+        }
+
+        .input-group{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            font-size:16px;
+        }
+
+        .btn{
+            width:100%;
+            padding:12px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-size:16px;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:#1d4ed8;
+        }
+
+        .extra-links{
+            display:flex;
+            justify-content:space-between;
+            margin-top:15px;
+            font-size:14px;
+        }
+
+        .extra-links a{
+            text-decoration:none;
+            color:#2563eb;
+            font-weight:bold;
+        }
+
+        .extra-links a:hover{
+            text-decoration:underline;
+        }
+
+        .register-link{
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .register-link a{
+            text-decoration:none;
+            color:#2563eb;
+            font-weight:bold;
+        }
+
+        .register-link a:hover{
+            text-decoration:underline;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <h2>Login to CloudVault</h2>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn">
+                Login
+            </button>
+
+        </form>
+
+        <div class="extra-links">
+            <a href="#">Forgot Password?</a>
+            <a href="index.html">Home</a>
+        </div>
+
+        <div class="register-link">
+            Don't have an account?
+            <a href="register.html">Register</a>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

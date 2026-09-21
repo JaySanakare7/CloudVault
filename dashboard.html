@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard - CloudVault</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f7fc;
+        }
+
+        .navbar{
+            background:#1e3a8a;
+            color:white;
+            padding:15px 30px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            font-size:24px;
+            font-weight:bold;
+        }
+
+        .logout-btn{
+            background:#ef4444;
+            color:white;
+            border:none;
+            padding:10px 15px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:30px auto;
+        }
+
+        .welcome-card{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom:25px;
+        }
+
+        .upload-section{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom:25px;
+        }
+
+        .upload-section h2{
+            margin-bottom:15px;
+            color:#1e3a8a;
+        }
+
+        input[type="file"]{
+            margin-bottom:15px;
+        }
+
+        .upload-btn{
+            background:#2563eb;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .storage-card{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom:25px;
+        }
+
+        .progress-bar{
+            width:100%;
+            height:20px;
+            background:#ddd;
+            border-radius:20px;
+            overflow:hidden;
+            margin-top:10px;
+        }
+
+        .progress{
+            width:35%;
+            height:100%;
+            background:#2563eb;
+        }
+
+        .files-section{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .files-section h2{
+            margin-bottom:15px;
+            color:#1e3a8a;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        th, td{
+            padding:12px;
+            border-bottom:1px solid #ddd;
+            text-align:left;
+        }
+
+        th{
+            background:#f1f5f9;
+        }
+
+        .download-btn{
+            background:#10b981;
+            color:white;
+            border:none;
+            padding:8px 12px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .delete-btn{
+            background:#ef4444;
+            color:white;
+            border:none;
+            padding:8px 12px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .action-buttons{
+            display:flex;
+            gap:10px;
+        }
+
+        @media(max-width:768px){
+            table{
+                display:block;
+                overflow-x:auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="navbar">
+        <div class="logo">CloudVault</div>
+
+       <button id="logoutBtn" class="logout-btn">
+    Logout
+</button>
+    </div>
+
+    <div class="container">
+
+        <div class="welcome-card">
+            <h2>Welcome, Jay 👋</h2>
+            <p>Manage and access your files securely from anywhere.</p>
+        </div>
+
+        <div class="upload-section">
+            <h2>Upload File</h2>
+
+            <input type="file" id="fileUpload">
+
+            <br>
+
+            <button class="upload-btn">Upload File
+</button>
+        </div>
+
+        <div class="storage-card">
+            <h2>Storage Usage</h2>
+            <p id="storageUsage">0 MB of 1 GB Used</p>
+
+            <div class="progress-bar">
+                <div id="storageProgress" class="progress"></div>
+            </div>
+        </div>
+
+        <div class="files-section">
+            <h2>My Files</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>File Name</th>
+                        <th>Type</th>
+                        <th>Size</th>
+                        <th>Uploaded On</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="filesTableBody">
+
+</tbody>
+            </table>
+
+        </div>
+
+    </div>
+    // for protection 
+
+    <script>
+
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+
+        window.location.href = "login.html";
+
+    }
+
+</script>
+<script src="script.js"></script>
+</body>
+</html>
